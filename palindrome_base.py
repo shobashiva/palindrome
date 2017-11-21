@@ -6,14 +6,13 @@ def is_palindrome(number_string):
 
 	if len(number_string) % 2: # odd number  
 		if number_string[0:half] == ''.join(reversed(number_string[half+1:])):
-		# if number_string[0:half] == number_string[half+1:]:
 			return True
 	else: # even number
 		if number_string[0:half] == ''.join(reversed(number_string[half:])):
-		# if number_string[0:half] == number_string[half:]:
 			return True
 	
 	return False
+
 
 def get_base(base, number):
 	nums = []
@@ -21,6 +20,7 @@ def get_base(base, number):
 		number, r = divmod(number, base)
 		nums.append(str(r))
 	return ''.join(reversed(nums))
+
 
 def main():
 	with open('palindrome_answers.csv', 'w+') as fi:
@@ -34,5 +34,6 @@ def main():
 					line = '%s, %s\n' % (i, counter)
 					fi.write(line)
 				counter += 1
+
 
 main()
